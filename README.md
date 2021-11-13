@@ -1,6 +1,6 @@
 # api-testing-requests-pytest
 ## Install
-Make sure you Python 3 install in your machine. Then:
+Make sure you have Python 3 installed on your machine. Then:<br>
 1.Install pipenv <br>
 <code>sudo apt-get install pipenv</code><br>
 2.Go to your project directory then type following command to create virtual environment for your project.<br>
