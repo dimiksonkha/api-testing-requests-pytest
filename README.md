@@ -13,5 +13,8 @@ Make sure you have Python 3 installed on your machine. Then:<br>
 5.Verify installation<br>
 <code>pip freeze </code><br>
 
+## Running Tests
+<code>python3 -m pytest</code>
+
 
 
