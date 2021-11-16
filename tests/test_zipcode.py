@@ -1,6 +1,5 @@
 import requests
-import pytest
-from json import dumps
+from assertpy.assertpy import assert_that
 from utils.print_helpers import pretty_print
 from config import BASE_URI,COUNTRY,ZIP_CODE
 
@@ -21,15 +20,16 @@ def test_zipcode():
     post_code = response_text['post code']
     
     #Header assertion
-    assert response.status_code == 200
+    assert_that(response.status_code).is_equal_to(requests.codes.ok)
+    
     # Response body assertion
-    assert country == 'United States'
-    assert country_abbr == 'US'
-    assert latitude == '34.0901'
-    assert longitude == '-118.4065'
-    assert place_name == 'Beverly Hills'
-    assert state == 'California'
-    assert state_abbr == 'CA'
-    assert post_code == ZIP_CODE
+    assert_that(country).is_equal_to('United States')
+    assert_that(country_abbr).is_equal_to('US')
+    assert_that(latitude).is_equal_to('34.0901')
+    assert_that(longitude).is_equal_to('-118.4065')
+    assert_that(place_name).is_equal_to('Beverly Hills')
+    assert_that(state).is_equal_to('California')
+    assert_that(state_abbr).is_equal_to('CA')
+    assert_that(post_code).is_equal_to(ZIP_CODE)
 
 
