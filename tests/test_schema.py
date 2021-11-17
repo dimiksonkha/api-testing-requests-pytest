@@ -16,7 +16,7 @@ schema = { "country": {'type':'string'},
   "post code": {'type':'number'}
   }
 
-def test_schema_has_expected_schema():
+def test_zipcode_has_expected_schema():
     response = requests.get(BASE_URI+'/'+COUNTRY+'/'+ZIP_CODE)
     response_text = json.loads(response.text)
 
