@@ -6,13 +6,15 @@ from config import BASE_URI, COUNTRY, ZIP_CODE
 
 schema = { "country": {'type':'string'},
   "country abbreviation": {'type':'string'},
-  "places": [ { "latitude": {'type':'float'},
-                "longitude": {'type':'float'},
-                "place name": {'type':'string'},
-                "state": {'type':'string'},
-                "state abbreviation": {'type':'string'}
-             }
-            ],
+  "places": {'type':'dict',
+              'keysrules':[ {"latitude": {'type':'string'},
+                        "longitude": {'type':'number'},
+                        "place name": {'type':'string'},
+                        "state": {'type':'string'},
+                        "state abbreviation": {'type':'string'}
+                        }
+              ]
+            }, 
   "post code": {'type':'number'}
   }
 
