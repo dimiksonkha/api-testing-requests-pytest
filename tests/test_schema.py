@@ -6,16 +6,15 @@ from config import BASE_URI, COUNTRY, ZIP_CODE
 
 schema = { "country": {'type':'string'},
   "country abbreviation": {'type':'string'},
-  "places": {'type':'dict',
-              'keysrules':[ {"latitude": {'type':'string'},
-                        "longitude": {'type':'number'},
-                        "place name": {'type':'string'},
-                        "state": {'type':'string'},
-                        "state abbreviation": {'type':'string'}
-                        }
-              ]
-            }, 
-  "post code": {'type':'number'}
+  "places": {'type':'list',
+              'items': [{'type':'dict',
+                        'keysrules':
+                          {'type':'number','type':'number','type':'string',
+                          'type':'string','type':'string'}
+                          
+                        }]
+                       },
+  "post code": {'type':'string'}
   }
 
 def test_zipcode_has_expected_schema():
