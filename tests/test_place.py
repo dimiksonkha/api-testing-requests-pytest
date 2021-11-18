@@ -1,12 +1,15 @@
 import requests
 from assertpy.assertpy import assert_that
 from utils.print_helpers import pretty_print
-from config import BASE_URI,COUNTRY,ZIP_CODE
+from clients.places.place_client import PlaceClient
+from config import ZIP_CODE
+
+client = PlaceClient()
 
 
-def test_zipcode():
-    response = requests.get(BASE_URI+'/'+COUNTRY+'/'+ZIP_CODE)
-    response_text = response.json()
+def test_places():
+    response = client.read_all_places_by_zipcode_and_country()
+    response_text = response.as_dict
     pretty_print(response_text)
 
      # Extract data from json response
