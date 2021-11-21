@@ -7,10 +7,11 @@ from config import ZIP_CODE
 client = PlaceClient()
 
 
-def test_places():
+def test_places(logger):
     response = client.read_all_places_by_zipcode_and_country()
     response_text = response.as_dict
     pretty_print(response_text)
+    logger.info("places read successfully")
 
      # Extract data from json response
     country = response_text ['country']

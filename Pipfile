@@ -8,6 +8,7 @@ requests = "*"
 pytest = "*"
 assertpy = "*"
 cerberus = "*"
+pytest-reportportal = "*"
 
 [dev-packages]
 
